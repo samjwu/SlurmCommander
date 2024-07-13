@@ -1,0 +1,12 @@
+- name: Submit a simple job to the SLURM controller node
+  hosts: controller_node
+  tasks:
+    - name: Submit job from command line using sbatch
+        command: >
+          sbatch --partition={{ partition_name }}
+            --job-name={{ job_name }}
+            --mem={{ memory_limit }}
+            --time={{ time_limit }}
+            --output={{ output_file }}
+            --error={{ error_file }}
+            --wrap="{{ run_script }}"
