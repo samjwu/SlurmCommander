@@ -1,6 +1,10 @@
 - name: Submit a simple job to the SLURM controller node
   hosts: controller_node
   tasks:
+    - name: Copy simple job script
+      copy:
+        src: roles/simple_job/files/simple.py
+        dest: "{{ script_path }}"
     - name: Submit job from command line using sbatch
         command: >
           sbatch --partition={{ partition_name }}
@@ -9,4 +13,4 @@
             --time={{ time_limit }}
             --output={{ output_file }}
             --error={{ error_file }}
-            --wrap="{{ run_script }}"
+            --wrap="python {{ script_path }}"
