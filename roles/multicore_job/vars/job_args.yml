@@ -1,0 +1,10 @@
+code_path: /home/slurm/multicore.cpp
+cmake_path: /home/slurm/CMakeLists.txt
+script_path: /home/slurm/run.sh
+partition_name: general
+job_name: multicore
+num_cpus: 4
+memory_limit: 8G
+time_limit: 0-10:0
+output_file: multicore_%j_output.log
+error_file: multicore_%j_error.log
