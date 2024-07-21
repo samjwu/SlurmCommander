@@ -1,0 +1,11 @@
+code_path: /home/slurm/multinode.cpp
+cmake_path: /home/slurm/CMakeLists.txt
+script_path: /home/slurm/run.sh
+partition_name: general
+job_name: multinode
+num_nodes: 2
+num_cpus: 4
+memory_limit: 8G
+time_limit: 0-10:0
+output_file: multinode_%j_output.log
+error_file: multinode_%j_error.log
