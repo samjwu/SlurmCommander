@@ -1,0 +1,27 @@
+- name: Submit a multinode job to the SLURM controller node
+  hosts: controller_node
+  tasks:
+    - name: Copy multinode job source code
+      copy:
+        src: roles/multinode_job/files/multinode.cpp
+        dest: "{{ code_path }}"
+    - name: Copy multinode job CMakeLists.txt
+      copy:
+        src: roles/multinode_job/files/CMakeLists.txt
+        dest: "{{ cmake_path }}"
+    - name: Copy multinode job run script
+      copy:
+        src: roles/multinode_job/files/run.sh
+        dest: "{{ script_path }}"
+        mode: "0755"
+    - name: Submit job from command line using sbatch
+      command: >
+        sbatch --partition={{ partition_name }}
+          --job-name={{ job_name }}
+          --ntasks={{ num_nodes }}
+          --cpus-per-task={{ num_cpus }}
+          --mem={{ memory_limit }}
+          --time={{ time_limit }}
+          --output={{ output_file }}
+          --error={{ error_file }}
+          --wrap=".{{ script_path }} {{ num_cpus }}"
