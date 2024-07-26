@@ -1,4 +1,4 @@
-// Example multicore job
+// Example multinode job
 #include <iostream>
 #include <thread>
 #include <vector>
