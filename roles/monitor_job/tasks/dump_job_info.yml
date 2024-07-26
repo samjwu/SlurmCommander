@@ -1,0 +1,6 @@
+- name: Dump job information
+  hosts: controller_node
+  tasks:
+    - name: Show job info in long format via SLURM account
+      command: >
+        sacct -l -j {{ job_id }}
