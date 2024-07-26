@@ -1,0 +1,6 @@
+- name: Show jobs in the SLURM queue
+  hosts: controller_node
+  tasks:
+    - name: Show SLURM queue in long format
+      command: >
+        squeue -l
