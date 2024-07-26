@@ -1,0 +1,22 @@
+- name: Dump recent job information
+  hosts: controller_node
+  tasks:
+    - name: Show statistics for recent jobs
+      command: >
+        sacct -S `date --date "last month" +%Y-%m-%d` \
+          -o "Submit,
+          JobID,
+          JobName,
+          Partition,
+          ReqNodes,
+          NNodes,
+          NodeList,
+          ReqCPUs,
+          NCPUS,
+          ReqMem,
+          MaxRSS,
+          State,
+          ExitCode,
+          Start,
+          End,
+          Elapsed"
