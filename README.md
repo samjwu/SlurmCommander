@@ -10,7 +10,7 @@ pip install ansible
 
 ## Usage
 
-Add hostnames for SLURM controller node in `staging.ini`.
+Add hostname for SLURM controller node in `staging.ini`.
 
 Configure the files and variables the playbook will use based on the role, then run the playbook.
 
