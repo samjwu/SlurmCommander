@@ -1,0 +1,6 @@
+- name: Cancel job
+  hosts: controller_node
+  tasks:
+    - name: Cancel specific job by ID
+      command: >
+        scancel {{ job_id }}
