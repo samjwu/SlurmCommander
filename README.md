@@ -14,6 +14,10 @@ Add hostname for SLURM controller node in `staging.ini`.
 
 Configure the files and variables the playbook will use based on the role, then run the playbook.
 
+The manage jobs role handles monitoring and cancelling jobs.
+
+Other roles handle launching different types of jobs.
+
 ### Example
 
 To run a simple job:
