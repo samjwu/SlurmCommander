@@ -1,0 +1,6 @@
+- name: Cancel jobs by partition
+  hosts: controller_node
+  tasks:
+    - name: Cancel all jobs in specific partition
+      command: >
+        scancel -p {{ partition_name }}
