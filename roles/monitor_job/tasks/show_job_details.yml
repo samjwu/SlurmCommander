@@ -1,6 +1,6 @@
 - name: Show details for a specific job
   hosts: controller_node
   tasks:
-    - name: Show detailed debug for a job
+    - name: Show detailed debug for a job via SLURM control
       command: >
         scontrol show job -dd {{ job_id }}
