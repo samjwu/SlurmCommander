@@ -1,4 +1,4 @@
-- name: Dump job information
+- name: Dump a specific job's information
   hosts: controller_node
   tasks:
     - name: Show job info in long format via SLURM account
