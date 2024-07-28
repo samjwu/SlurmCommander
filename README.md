@@ -2,6 +2,8 @@
 
 Ansible playbooks to run commands via SLURM.
 
+![SLURM logo](./slurm.png)
+
 ## Requirements
 
 ```shell
